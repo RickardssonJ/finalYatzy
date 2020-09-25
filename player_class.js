@@ -8,25 +8,38 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
     playerSumBonusTotal() {
       let playersSum = document.getElementById(`player-${this.number}-sum`);
+      let playersSumUpperTable = document.getElementById(`player-${this.number}-upper-sum`);
       let playersBonus = document.getElementById(`player-${this.number}-bonus`);
       let playersTotal = document.getElementById(`player-${this.number}-total`);
       let playerArray = Array.from(
         document.getElementsByClassName(`player-${this.number}`)
       );
+      let playerUpperArray = playerArray.filter((e,i)=>i<6).map((element,index) => {
+        return Number(element.value);
+      });
       let playerSecondArray = playerArray.map((element) => {
         return Number(element.value);
       });
-      let sum = playerSecondArray.reduce((prevValue, currValue) => {
+
+
+      let sum = playerUpperArray.reduce((prevValue, currValue) => {
         return prevValue + currValue;
       }, 0);
-      playersSum.innerHTML = sum;
+      let totalSum = playerSecondArray.reduce((prevValue, currValue) => {
+        return prevValue + currValue;
+      }, 0);
+
+
+      playersSumUpperTable.innerHTML = sum;
       if (sum >= 63) {
         playersBonus.innerHTML = 50;
       } else {
         playersBonus.innerHTML = 0;
       }
-      playersTotal.innerHTML =
-        Number(playersSum.innerHTML) + Number(playersBonus.innerHTML);
+      playersTotal.innerHTML = totalSum + Number(playersBonus.innerHTML);
+
+      playersSumUpperTable.innerHTML =
+        Number(playersSumUpperTable.innerHTML) + Number(playersBonus.innerHTML);
     }
   }
 

@@ -346,10 +346,10 @@
             </tr>
             <tr class="info-row">
               <th colspan="2" class="info-row-main">Summa/Sum</th>
-              <td><span id="player-1-sum">0</span></td>
-              <td><span id="player-2-sum">0</span></td>
-              <td><span id="player-3-sum">0</span></td>
-              <td><span id="player-4-sum">0</span></td>
+              <td><span id="player-1-upper-sum">0</span></td>
+              <td><span id="player-2-upper-sum">0</span></td>
+              <td><span id="player-3-upper-sum">0</span></td>
+              <td><span id="player-4-upper-sum">0</span></td>
               <td style="display: none"></td>
             </tr>
             <tr class="info-row">
@@ -362,74 +362,362 @@
             </tr>
             <tr>
               <th colspan="2">Par/Pair</th>
-              <td id="player1-7" class="row-7 column-1"></td>
-              <td id="player2-7" class="row-7 column-2"></td>
-              <td id="player3-7" class="row-7 column-3"></td>
-              <td id="player4-7" class="row-7 column-4"></td>
+              <td>   
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+            </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Två Par/Two Pairs</th>
-              <td id="player1-8" class="row-8 column-1"></td>
-              <td id="player2-8" class="row-8 column-2"></td>
-              <td id="player3-8" class="row-8 column-3"></td>
-              <td id="player4-8" class="row-8 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Tretal/Three of a kind</th>
-              <td id="player1-9" class="row-9 column-1"></td>
-              <td id="player2-9" class="row-9 column-2"></td>
-              <td id="player3-9" class="row-9 column-3"></td>
-              <td id="player4-9" class="row-9 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Fyrtal/Four of a kind</th>
-              <td id="player1-10" class="row-10 column-1"></td>
-              <td id="player2-10" class="row-10 column-2"></td>
-              <td id="player3-10" class="row-10 column-3"></td>
-              <td id="player4-10" class="row-10 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Liten stege/Small straight</th>
-              <td id="player1-11" class="row-11 column-1"></td>
-              <td id="player2-11" class="row-11 column-2"></td>
-              <td id="player3-11" class="row-11 column-3"></td>
-              <td id="player4-11" class="row-11 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Stor stege/Large straight</th>
-              <td id="player1-12" class="row-12 column-1"></td>
-              <td id="player2-12" class="row-12 column-2"></td>
-              <td id="player3-12" class="row-12 column-3"></td>
-              <td id="player4-12" class="row-12 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Kåk/Full house</th>
-              <td id="player1-13" class="row-13 column-1"></td>
-              <td id="player2-13" class="row-13 column-2"></td>
-              <td id="player3-13" class="row-13 column-3"></td>
-              <td id="player4-13" class="row-13 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Chans/Chance</th>
-              <td id="player1-14" class="row-14 column-1"></td>
-              <td id="player2-14" class="row-14 column-2"></td>
-              <td id="player3-14" class="row-14 column-3"></td>
-              <td id="player4-14" class="row-14 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr>
               <th colspan="2">Yatzy</th>
-              <td id="player1-15" class="row-15 column-1"></td>
-              <td id="player2-15" class="row-15 column-2"></td>
-              <td id="player3-15" class="row-15 column-3"></td>
-              <td id="player4-15" class="row-15 column-4"></td>
+              <td>
+                <input
+                  class="player-1"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-2"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-3"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
+              <td>
+                <input
+                  class="player-4"
+                  type="number"
+                  min="3"
+                  max="15"
+                  step="3"
+                />
+              </td>
               <td class="pointsDisplay"></td>
             </tr>
             <tr class="info-row">
