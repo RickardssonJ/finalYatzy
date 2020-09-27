@@ -15,13 +15,13 @@ class Game {
   // This method checks how many throws the player has used. Max throws are three
   // You start with 3 throws and we'll count down from 3 -> 0
   // When you've used all your three throws we'll create a new button element (with ID, class, inner HTML and append it to the calculate button div) so the next player can start his turn.
-  // When the new player starts he has 3 new throws to use. 
+  // When the new player starts he has 3 new throws to use.
   counter() {
     let checkBox = Array.from(document.getElementsByClassName("check-input"));
     let counter = Number(document.getElementById("antalSpel").innerHTML);
     counter--;
     document.getElementById("antalSpel").innerHTML = counter;
-    
+
     if (counter == 0) {
       this.knapp.style.display = "none";
       //checkBox
@@ -41,7 +41,7 @@ class Game {
   }
 
   // Method that starts a new round that takes a parameter (controlButton)
-  // When we press on the button it removes the "new" controlbutton which says "Write your points" 
+  // When we press on the button it removes the "new" controlbutton which says "Write your points"
   // We remove the checkboxes on the first round (to prevent cheating) and make sure that they're all unchecked (false)
   // We add three new throw counts and count down from 3 -> 0.
   newGame(controlButton) {

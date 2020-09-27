@@ -6,31 +6,28 @@ window.addEventListener("DOMContentLoaded", () => {
   // Call the initializecheckboxes method to prevent cheating
   game.initializeCheckboxes();
 
-
-    // We create a first Dices class here which has 2 attribues
-    // One attribute of an array in which we will push 5 Dice Objects (with a random value)
-    // One attribute for the checkboxes below the dices 
+  // We create a first Dices class here which has 2 attribues
+  // One attribute of an array in which we will push 5 Dice Objects (with a random value)
+  // One attribute for the checkboxes below the dices
   class Dice {
     constructor(size = 5) {
       this.dice = [];
       // We create an array of the check-input class and use the map method to save the checked value of the checkboxes
       // We have a loop to push in the Die-objects into the this.dice array and we give each die-object an index and a checkbox
-      this.checkbox = Array.from(document.getElementsByClassName("check-input")).map((element) => element.checked); 
+      this.checkbox = Array.from(
+        document.getElementsByClassName("check-input")
+      ).map((element) => element.checked);
       for (let i = 0; i < size; i++) {
         this.dice.push(new Die(i, this.checkbox[i]));
         this.showDiceImages(i);
       }
     }
 
-    // Method that sets new dice image depending on value of the dice 
+    // Method that sets new dice image depending on value of the dice
     // If a checkbox is checked it doesn't change the image for the next roll.
     showDiceImages(i) {
       if (!this.checkbox[i]) {
-        let updatefield = `<img src='./images/Alea_${
-          this.dice[i].value
-        }.png'><input id="save-input-${
-          i + 1
-        }" class="check-input" type="checkbox">`;
+        let updatefield = `<img src='./images/Alea_${this.dice[i].value}.png'><input id="save-input-${i + 1}" class="check-input" type="checkbox">`;
         document.getElementById("dice-show-" + (i + 1)).innerHTML = updatefield;
       }
     }
@@ -46,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!isCheckBoxChecked) {
         this.value = this.new_value();
       } else {
-        let imgstr = document.getElementById("dice-show-" + (i + 1)).firstChild.src; 
+        let imgstr = document.getElementById("dice-show-" + (i + 1)).firstChild.src;
         this.value = Number(imgstr.split("_")[1].slice(0, 1));
       }
     }
@@ -55,42 +52,10 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // The eventlistener for the startbutton that creates a new Dice class (array of Die's) 
+  // The eventlistener for the startbutton that creates a new Dice class (array of Die's)
   // and starts the game when clicked and starts to count rounds.
   startGameBtn.addEventListener("click", () => {
     new Dice();
     game.counter();
   });
 });
-// window.addEventListener("DOMContentLoaded", ()=>{
-//     //let numberOfPlayers = parseInt(prompt("How many players? Min: 1 Max: 4"))
-
-//    // this.checkbox = Array.from(document.getElementsByClassName("check-input")).map(element=>element.style.display = "none")
-
-//     let startGameButton = document.getElementById("startGameButton");
-//     let addPlayersButton = document.getElementById("addPlayersButton");
-
-//     //let n = 1;
-//     let game;
-
-//     addPlayersButton.addEventListener("click", e=>{
-//         let player_box = document.getElementById("player-box")
-//         let pBoxInput = document.getElementById("player-box-input")
-//         n = pBoxInput.value
-
-//         game = new Game(n);
-//         player_box.remove();
-
-//     })
-
-//     startGameButton.addEventListener("click", () => {
-//         game.initializeState()
-//         game.turnControl();
-
-//         let newThrow = new Dices();
-//         newThrow.printTableResults();
-
-//         newThrow.confirmUpperPoints();
-//         newThrow.confirmBottomPoints();
-//     })
-// })
